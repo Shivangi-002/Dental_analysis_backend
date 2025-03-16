@@ -11,7 +11,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://dental-analysis-backend.onrender.com"],  # Replace * with your frontend URL for security
+    allow_origins=["*"],  # Replace * with your frontend URL for security
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
