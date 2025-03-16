@@ -5,8 +5,17 @@ import uvicorn
 from fastapi.responses import FileResponse
 import shutil
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://dental-analysis-backend.onrender.com"],  # Replace * with your frontend URL for security
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 UPLOAD_FOLDER = "uploads"
 PROCESSED_FOLDER = "processed"
